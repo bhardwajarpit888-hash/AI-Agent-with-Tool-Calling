@@ -1,23 +1,27 @@
-# AI-Agent-with-Tool-Calling
-# 🤖 Enterprise Support & Logistics Agent
+# 🤖 Enterprise Support & Logistics AI Agent
 
-An advanced, secure AI agent built with **LangGraph**, **Streamlit**, and **Groq**, featuring tool-calling capabilities (shipping cost calculation and inventory checking) along with persistent conversational memory.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg" alt="Python Version">
+  <img src="https://img.shields.io/badge/Streamlit-1.32%2B-red.svg" alt="Streamlit">
+  <img src="https://img.shields.io/badge/LangGraph-Workflow-orange.svg" alt="LangGraph">
+  <img src="https://img.shields.io/badge/Groq-Qwen%20Model-green.svg" alt="Groq API">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+</p>
 
-## 🚀 Features
-- **Interactive UI**: Clean chat interface powered by Streamlit.
-- **Custom Tool Calling**: Automatically invokes tools to calculate shipping rates and query inventory SKUs.
-- **Persistent Memory**: Uses LangGraph's `MemorySaver` checkpointer to maintain multi-turn conversation context.
-- **Secure Architecture**: Environment-agnostic design using Streamlit Secrets for API key protection.
+An advanced, secure, and production-ready enterprise AI agent built using **LangGraph**, **Streamlit**, and **Groq**. It features automated custom tool-calling for shipping cost calculations and inventory lookups, supported by robust error handling, self-correction loops, and persistent multi-turn conversational memory.
 
-## 🛠️ Tech Stack
-- **Python**
-- **Streamlit**
-- **LangChain & LangGraph**
-- **Groq API (Qwen Model)**
+---
+
+## 🏗️ Architecture & Workflow Flowchart
+
+The agent operates on an iterative decision-making loop powered by LangGraph:
+
+```text
+User Request ──► Agent Decision (LLM) ──► Tool Execution ──► Self-Correction / Response
 
 ## ⚙️ How to Run Locally
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/bhardwajarpit888-hash/AI-Agent-with-Tool-Calling.git](https://github.com/bhardwajarpit888-hash/AI-Agent-with-Tool-Calling.git)
+   git clone https://github.com/bhardwajarpit888-hash/AI-Agent-with-Tool-Calling.git
    cd AI-Agent-with-Tool-Calling
