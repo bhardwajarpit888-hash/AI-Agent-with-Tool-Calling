@@ -13,20 +13,34 @@ An advanced, secure, and production-ready enterprise AI agent built using **Lang
 
 ---
 
-## 🏗️ Detailed System Architecture
+## 🏗️ Detailed System Architecture & Workflow
 
-The agent follows a robust, multi-layered architecture for secure reasoning and dynamic execution.
+The agent follows an iterative decision-making and tool-execution loop powered by LangGraph:
 
-<br>
+```text
+User Request 
+     │
+     ▼
+Agent Decision (LLM Engine) 
+     │
+     ├─► [Tool Required?] ──► Custom Tool Registry (Shipping / Inventory)
+     │                              │
+     │                              ▼
+     │                     Try/Except Guardrail
+     │                              │
+     │                 ┌────────────┴────────────┐
+     │           [Success]                   [Error/Invalid]
+     │               │                           │
+     │               ▼                           ▼
+     │       Return Tool Output          Self-Correction Loop 
+     │               │                   (Sends traceback back to LLM)
+     │               └────────────┬──────────────┘
+     │                            │
+     └────────────────────────────┘
+     │
+     ▼
+Final Response to User (Streamlit UI)
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/bhardwajarpit888-hash/AI-Agent-with-Tool-Calling/main/architecture_dark.png">
-    <img alt="Enterprise Logistics AI Agent Architecture Diagram" src="https://raw.githubusercontent.com/bhardwajarpit888-hash/AI-Agent-with-Tool-Calling/main/architecture_light.png" width="85%">
-  </picture>
-</p>
-
-<br>
 
 ### 🔍 Component Breakdown:
 
